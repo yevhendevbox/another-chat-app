@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-800 text-white py-4 px-8 flex items-center justify-center">
+  <header class="sticky top-0 bg-gray-800 text-white py-4 px-8 flex items-center justify-center">
     <div>
       <UserCircleIcon class="h-6 w-6" />
     </div>

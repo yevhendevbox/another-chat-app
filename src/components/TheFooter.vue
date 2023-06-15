@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-800 text-white py-4 px-8 flex justify-between items-center">
+  <footer class="sticky bottom-0 bg-gray-800 text-white py-4 px-8 flex justify-between items-center">
     <div class="flex">
       <HomeIcon class="h-6 w-6" />
       <span class="ml-2">Домівка</span>

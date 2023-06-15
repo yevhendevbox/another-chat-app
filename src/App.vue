@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4 flex flex-col min-h-screen">
+  <div class="container mx-auto px-4 flex flex-col h-screen">
     <the-header />
     <the-messages-area />
     <the-footer />
