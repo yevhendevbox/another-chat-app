@@ -1,10 +1,13 @@
 <template>
   <div>
-    <router-view></router-view>
+    <h1>Hello from login page</h1>
   </div>
 </template>
 
 <script setup lang="ts">
+
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -7,7 +7,7 @@
   </header>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { UserCircleIcon } from '@heroicons/vue/24/solid';
 </script>
 

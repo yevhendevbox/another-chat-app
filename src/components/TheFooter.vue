@@ -15,7 +15,7 @@
   </footer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/solid';
 import { HomeIcon } from '@heroicons/vue/24/solid';
 import { CogIcon } from '@heroicons/vue/24/solid';

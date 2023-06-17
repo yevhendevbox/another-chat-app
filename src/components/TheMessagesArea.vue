@@ -7,7 +7,7 @@
           <li v-for="message in messages" :key="message.id" class="py-2">
             <div :class="[message.isMyMessage ? 'justify-end' : 'justify-start', 'flex']">
               <div :class="[message.isMyMessage ? myMessageClasses : otherMessageClasses, commonClasses]">
-                <p class="text-sm leading-normal break-words">{{ message.text }}</p>
+                <p class="text-sm leading-normal break-words">{{ message.content }}</p>
               </div>
             </div>
           </li>
@@ -24,26 +24,27 @@
   </main>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref, onMounted, nextTick } from 'vue';
-import { useMessagesStore } from '../stores/messages.ts';
+import { useMessagesStore } from '@/stores/messages';
+import { type MessageInterface } from '@/types';
 
 const messagesStore = useMessagesStore();
-const messages = ref([]);
+const messages = ref<Array<MessageInterface>>([]);
 const newMessageText = ref('');
 const commonClasses = ref('max-w-[70%] rounded-full p-2');
 const myMessageClasses = ref('bg-blue-500 text-white');
 const otherMessageClasses = ref('bg-gray-200 text-gray-800');
 
-onMounted(async () => {
+onMounted(async (): Promise<void> => {
   await messagesStore.setMessagesList();
   messages.value = messagesStore.messages;
 });
 
-const sendMessage = () => {
-  const newMessage = {
+const sendMessage = (): void => {
+  const newMessage: MessageInterface = {
     id: messages.value.length + 1,
-    text: newMessageText.value,
+    content: newMessageText.value,
     isMyMessage: true,
   };
 
