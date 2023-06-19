@@ -1,4 +1,3 @@
-import LoginPage from '@/views/LoginPage.vue';
 import MainPage from '@/views/MainPage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -9,11 +8,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: MainPage,
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginPage,
     },
   ],
 });
