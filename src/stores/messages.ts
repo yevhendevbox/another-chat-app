@@ -22,7 +22,9 @@ export const useMessagesStore = defineStore('message', {
     },
 
     addMessage(newMessage: { id: number; text: string; isMyMessage: boolean }) {
-      this.messages.push(newMessage);
+      if (newMessage.text.trim().length) {
+        this.messages.push(newMessage);
+      }
     },
   },
 });

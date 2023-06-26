@@ -14,6 +14,7 @@
         </ul>
         <p v-else class="text-center">No messages!</p>
       </div>
+      {{ v$?.$errors[0]?.$message }}
       <input
         class="p-2 border border-gray-300 rounded sticky bottom-[56px]"
         v-model="newMessageText"
@@ -31,6 +32,7 @@ import { useMessagesStore } from '../stores/messages.ts';
 const messagesStore = useMessagesStore();
 const messages = ref([]);
 const newMessageText = ref('');
+
 const commonClasses = ref('max-w-[70%] rounded-full p-2');
 const myMessageClasses = ref('bg-blue-500 text-white');
 const otherMessageClasses = ref('bg-gray-200 text-gray-800');
