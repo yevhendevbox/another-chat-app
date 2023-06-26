@@ -14,7 +14,6 @@
         </ul>
         <p v-else class="text-center">No messages!</p>
       </div>
-      {{ v$?.$errors[0]?.$message }}
       <input
         class="p-2 border border-gray-300 rounded sticky bottom-[56px]"
         v-model="newMessageText"
