@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts" setup>
+import BaseFooterButton from './BaseFooterButton.vue';
 import { ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/solid';
 import { HomeIcon } from '@heroicons/vue/24/solid';
 import { CogIcon } from '@heroicons/vue/24/solid';
