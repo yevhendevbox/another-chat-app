@@ -1,18 +1,19 @@
+import type { MessageInterface } from '@/types';
 import { defineStore } from 'pinia';
 
 export const useMessagesStore = defineStore('message', {
   state: () => ({
-    messages: [] as { id: number; text: string; isMyMessage: boolean }[],
+    messages: [] as Array<MessageInterface>,
   }),
   actions: {
     setMessagesList() {
       try {
         // TODO when endpoints will exist, create request to backend -> GET axios
         const staticMessages = [
-          { id: 1, text: 'Привіт! Як справи?', isMyMessage: false },
-          { id: 2, text: 'Все гаразд, дякую!', isMyMessage: true },
-          { id: 3, text: 'А твої як?', isMyMessage: true },
-          { id: 4, text: 'Краще всіх!!!', isMyMessage: false },
+          { id: 1, content: 'Привіт! Як справи?', isMyMessage: false },
+          { id: 2, content: 'Все гаразд, дякую!', isMyMessage: true },
+          { id: 3, content: 'А твої як?', isMyMessage: true },
+          { id: 4, content: 'Краще всіх!!!', isMyMessage: false },
         ];
 
         this.messages = staticMessages;
@@ -21,8 +22,8 @@ export const useMessagesStore = defineStore('message', {
       }
     },
 
-    addMessage(newMessage: { id: number; text: string; isMyMessage: boolean }) {
-      if (newMessage.text.trim().length) {
+    addMessage(newMessage: MessageInterface) {
+      if (newMessage.content.trim().length) {
         this.messages.push(newMessage);
       }
     },
