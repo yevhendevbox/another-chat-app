@@ -6,10 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 const props = defineProps({
   icon: {
-    type: String,
+    type: Object,
     requered: true,
   },
   label: {
